@@ -1,0 +1,561 @@
+/* MOBILE FIRST */
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", sans-serif;
+}
+
+footer {
+    background-color: #fff;
+}
+
+/* Smartphone */
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+
+
+.border {
+    border: solid 1px #000;
+    background-color: rgb(219, 5, 5);
+    
+}
+
+/* Header */
+header {
+    font-family: "Oswald", sans-serif;
+    font-style: italic;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+
+.logo {
+   
+    height: 40px;
+    border: 1px rgb(148, 44, 44);
+    position: absolute;
+    left: 100px;
+}
+
+.logo:hover {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.5s;
+  
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+  }
+
+
+
+/* GRIDS POR AREAS */
+#gridAreas {
+    display: grid;
+/* estructura */
+    grid-template-areas: 
+    "cabeza"
+    "menu"
+    "productos"
+    "servicios"
+    "brazo"
+    "pie"
+;
+    grid-template-columns: 100%;
+    grid-template-rows: 100px 1fr 1fr 75px ;
+    grid-column-gap: 10px;
+    grid-row-gap: 5px; 
+
+}
+
+/* GRIDS COMIC PAGE */
+#gridAreasComics {
+    display: grid;
+    /* estructura */
+    grid-template-areas: 
+    "cabeza"
+    "menu"
+    "comics"
+    "comcs"
+    "brazo"
+    "pie"
+;
+    grid-template-columns: 100%;
+    grid-template-rows: 100px 1fr 1fr 75px ;
+    grid-column-gap: 10px;
+    grid-row-gap: 5px; 
+
+}
+
+/* Nombrar cada área */
+header {
+    grid-area: cabeza;
+    padding: 20px;
+}
+
+footer {
+    grid-area: pie;
+    padding: 10px;
+}
+
+#productos {
+    grid-area: productos;
+    padding: 10px;
+}
+
+#servicios {
+    grid-area: servicios;
+    padding: 10px;
+}
+
+#comics {
+    grid-area: comics;
+    padding: 10px;
+}
+
+
+nav {
+    grid-area: menu;
+    padding: 10px;
+}
+
+aside {
+    grid-area: brazo;
+    padding: 10px;
+}
+
+/* Item de Menu */ 
+span {
+    background-color: #fff;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+
+span:hover {
+    background-color: red;
+    color: azure;
+}
+
+
+
+/* Articles de galeria */
+article {
+    background-color: #fff;
+    border-radius: 4px;
+    margin: 5px;
+    text-align: center justify;
+    font-size: 0,75 rem;
+    }
+
+article h3 {
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+article p {
+    padding: 10px;
+}
+
+.price {
+    font-style:italic;
+}
+
+
+
+/* Flex */
+.flexMenu {
+    display: flex;
+    flex-direction: column;
+    }
+
+.productosFlex {
+    display: flex;
+    flex-flow: row nowrap;
+    }
+
+.redesFlex {
+    display: flex;
+    flex-direction: row ;
+    
+    }
+
+/* KEYFRAMES LOGO*/
+@keyframes shake {
+        0% { transform: translate(1px, 1px) rotate(0deg); }
+        10% { transform: translate(-1px, -2px) rotate(-1deg); }
+        20% { transform: translate(-3px, 0px) rotate(1deg); }
+        30% { transform: translate(3px, 2px) rotate(0deg); }
+        40% { transform: translate(1px, -1px) rotate(1deg); }
+        50% { transform: translate(-1px, 2px) rotate(-1deg); }
+        60% { transform: translate(-3px, 1px) rotate(0deg); }
+        70% { transform: translate(3px, 1px) rotate(-1deg); }
+        80% { transform: translate(-1px, -1px) rotate(1deg); }
+        90% { transform: translate(1px, 2px) rotate(0deg); }
+        100% { transform: translate(1px, -2px) rotate(-1deg); }
+      }
+
+
+
+
+
+/* Tablets */
+@media (min-width: 480px) and (max-width: 1023px) {
+    body {
+        width: 100%;
+        height: 100vh;
+        color: #010101;
+    }
+
+
+    /* GRIDS POR AREAS */
+    #gridAreas {
+        display: grid;
+    /* estructura */
+        grid-template-areas: 
+        "menu menu"
+        "cabeza cabeza"
+        /* fila 1 */
+        "productos productos"
+        /* fila 2 */
+        "servicios brazo"
+        /* fila 3 */
+        "pie pie"
+        /* fila 4 */
+    ;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 100px 1fr 1fr 75px ;
+        grid-column-gap: 3px;
+        grid-row-gap: 3px; 
+
+}
+
+/* GRIDS COMICS PAGE */
+#gridAreasComics {
+    display: grid;
+    /* estructura */
+    grid-template-areas: 
+    "menu menu"
+        "cabeza cabeza"
+        /* fila 1 */
+        "comics comics"
+        /* fila 2 */
+        "servicios brazo"
+        /* fila 3 */
+        "pie pie"
+        /* fila 4 */
+    ;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 100px 1fr 1fr 75px ;
+        grid-column-gap: 3px;
+        grid-row-gap: 3px; 
+
+
+}
+
+/* Items del Menu */
+span {
+    background-color: #fff;
+    margin-bottom: 5px;
+    padding: 5px;
+    width: 120px;
+    margin-left: 5px;
+    height: 40px;
+    text-align: center;
+}
+span:hover {
+    background-color: red;
+    color: azure;
+}
+
+/* Articles de galeria */
+article {
+    background-color: #fff;
+    border-radius: 4px;
+    margin: 5px;
+    text-align: center;
+    font-size: 0.75rem;
+    padding: 10px;
+}
+
+.logo {
+    height: 40px;
+    border: 1px rgb(148, 44, 44);
+    position: absolute;
+    left: 400px;
+}
+
+.logo:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+  }
+
+/* Flex */
+    .flexMenu {
+    display: flex;
+    flex-direction: row;
+    }
+
+    .productosFlex {
+    display: flex;
+    flex-flow: row nowrap;
+    }
+
+    .redesFlex {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+/* KEYFRAMES LOGO */
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+
+
+
+/* Desktop */
+@media (min-width: 1024px) {
+
+    
+    body {
+        width: 100%;
+        height: 100vh;
+    }
+
+    span {
+        background-color: #fff;
+        margin-bottom: 5px;
+        padding: 10px;
+    }
+
+    span:hover {
+     background-color: red;
+        color: azure;
+    }
+
+    article {
+    background-color: #fff;
+    border-radius: 4px;
+    margin: 5px;
+    text-align: center;
+    font-size: 0,75 rem;
+    }
+
+
+/* KEYFRAMES LOGO */
+@keyframes shake {
+        0% { transform: translate(1px, 1px) rotate(0deg); }
+        10% { transform: translate(-1px, -2px) rotate(-1deg); }
+        20% { transform: translate(-3px, 0px) rotate(1deg); }
+        30% { transform: translate(3px, 2px) rotate(0deg); }
+        40% { transform: translate(1px, -1px) rotate(1deg); }
+        50% { transform: translate(-1px, 2px) rotate(-1deg); }
+        60% { transform: translate(-3px, 1px) rotate(0deg); }
+        70% { transform: translate(3px, 1px) rotate(-1deg); }
+        80% { transform: translate(-1px, -1px) rotate(1deg); }
+        90% { transform: translate(1px, 2px) rotate(0deg); }
+        100% { transform: translate(1px, -2px) rotate(-1deg); }
+      }
+
+
+/* KEYFRAMES HEADER */
+@keyframes glitch {
+    1%{
+      transform: rotateX(10deg) skewX(90deg);
+    }
+    2%{
+      transform: rotateX(0deg) skewX(0deg);
+    }
+  }
+
+ 
+  @keyframes noise-1 {
+        steps: 30;
+    @for $i from 1 through $steps {
+      #{percentage($i*(1/$steps))} {
+        $top: random(100);
+        $bottom: random(101 - $top);
+        clip-path: inset(#{$top}px 0 #{$bottom}px 0);
+      }
+    }
+  
+  
+  @keyframes noise-2 {
+    $steps: 30;
+    @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+        $top: random(100);
+        $bottom: random(101 - $top);
+        clip-path: inset(#{$top}px 0 #{$bottom}px 0);
+      }
+    }
+  }
+  
+  .scanlines {
+    overflow: hidden;
+    mix-blend-mode: difference;
+  }
+  
+  .scanlines::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    animation: fudge 7s ease-in-out alternate infinite;
+  }
+  
+  
+  @keyframes fudge {
+    from {
+      transform: translate(0px, 0px);
+    }
+    to {
+      transform: translate(0px, 2%);
+    }
+  }
+  
+  .glow {
+    @extend .glitch;
+    text-shadow: 0 0 1000px rgb(223, 191, 191);
+    color: transparent;
+    position: absolute;
+    top: 0;
+  }
+  
+  
+  
+  @keyframes glitch-2 {
+    1%{
+      transform: rotateX(10deg) skewX(70deg);
+    }
+    2%{
+      transform: rotateX(0deg) skewX(0deg);
+    }
+  }
+
+} 
+
+
+/* Header */
+header {
+    font-family: "Oswald", sans-serif;
+    font-style: italic;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* ANIMACION DE HEADER */
+.container2 {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 4%;
+    left: 50%;
+  }
+  
+  .glitch {
+    color: rgb(223, 191, 191);
+    position: relative;
+    font-size: 2vw;
+    margin: 70px 200px;
+    animation: glitch 5s 5s infinite;
+  }
+  
+  .glitch::before {
+    content: attr(data-text);
+    position: absolute;
+    left: -2px;
+    text-shadow: -5px 0 magenta;
+    overflow: hidden;
+    top: 0;
+    animation: noise-1 3s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
+  }
+  
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 2px;
+    text-shadow: -5px 0 lightgreen;
+    overflow: hidden;
+    top: 0;
+    animation: noise-2 3s linear infinite alternate-reverse, glitch 5s 5s infinite;
+  }
+
+/* GRIDS POR AREAS */
+    #gridAreas {
+    display: grid;
+    /* estructura */
+    grid-template-areas: 
+    "menu cabeza cabeza" /* fila 1 si no quiero que esté algo solo pongo none o punto*/
+    "menu productos brazo" /* fila 2 */
+    "menu servicios brazo" /* fila 3 */
+    "menu pie pie" /* fila 4 */
+    ;
+    grid-template-columns: 15% auto 15%;
+    grid-template-rows: 100px 1fr 1fr 75px ;
+    grid-column-gap: 10px;
+    grid-row-gap: 5px; 
+
+}
+
+/* GRIDS COMICS PAGE */
+#gridAreasComics {
+    display: grid;
+    /* estructura */
+    grid-template-areas: 
+    "menu cabeza cabeza" /* fila 1 si no quiero que esté algo solo pongo none o punto*/
+    "menu comics brazo" /* fila 2 */
+    "menu servicios brazo" /* fila 3 */
+    "menu pie pie" /* fila 4 */
+    ;
+    grid-template-columns: 15% auto 15%;
+    grid-template-rows: 100px 1fr 1fr 75px ;
+    grid-column-gap: 10px;
+    grid-row-gap: 5px; 
+
+}
+
+
+
+/* Flex */
+    .flexMenu {
+    display: flex;
+    flex-direction: column;
+    }
+
+    .productosFlex {
+    display: flex;
+    flex-flow: row nowrap;
+    }
+    .redesFlex {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        
+    }
+}
+
+
+
+
+
+
