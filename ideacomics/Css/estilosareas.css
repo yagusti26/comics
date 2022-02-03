@@ -21,8 +21,7 @@ body {
 
 .border {
     border: solid 1px #000;
-    background-color: rgb(219, 5, 5);
-    
+    background-color: rgb(245, 7, 7);
 }
 
 /* Header */
@@ -35,24 +34,75 @@ header {
 }
 
 
-
-.logo {
-   
-    height: 40px;
-    border: 1px rgb(148, 44, 44);
+/* ANIMACION HEADER */
+.containerHeader {
     position: absolute;
-    left: 100px;
+    transform: translate(-50%, -50%);
+    top: 5%;
+    left: 50%;
+  }
+  
+  .glitch {
+    color: rgb(255, 254, 254);
+    position: relative;
+    font-size: 3vw;
+    margin: 70px 200px;
+    animation: glitch 5s 5s infinite;
+  }
+  
+  .glitch::before {
+    content: attr(data-text);
+    position: absolute;
+    left: -2px;
+    text-shadow: -5px 0 magenta;
+    overflow: hidden;
+    top: 0;
+    animation: noise-1 3s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
+  }
+  
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 2px;
+    text-shadow: -5px 0 rgb(177, 13, 13);
+    overflow: hidden;
+    top: 0;
+    animation: noise-2 3s linear infinite alternate-reverse, glitch 5s 5s infinite;
+  }
+
+/* LOGO */ 
+.logo {
+    
+  border: 1px whitesmoke;
+  position: absolute;
+  left: 90px;
 }
 
-.logo:hover {
-    /* Start the shake animation and make the animation last for 0.5 seconds */
+.logo {
     animation: shake 0.5s;
-  
-    /* When the animation is finished, start again */
     animation-iteration-count: infinite;
   }
 
 
+/* SERVICIOS */
+.grad {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #740707);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+/* KEYFRAMES SERVICIOS BACKG */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
 /* GRIDS POR AREAS */
 #gridAreas {
@@ -184,22 +234,25 @@ article p {
     
     }
 
-/* KEYFRAMES LOGO*/
+
+
+
+
+    
+/* KEYFRAMES LOGO */
 @keyframes shake {
-        0% { transform: translate(1px, 1px) rotate(0deg); }
-        10% { transform: translate(-1px, -2px) rotate(-1deg); }
-        20% { transform: translate(-3px, 0px) rotate(1deg); }
-        30% { transform: translate(3px, 2px) rotate(0deg); }
-        40% { transform: translate(1px, -1px) rotate(1deg); }
-        50% { transform: translate(-1px, 2px) rotate(-1deg); }
-        60% { transform: translate(-3px, 1px) rotate(0deg); }
-        70% { transform: translate(3px, 1px) rotate(-1deg); }
-        80% { transform: translate(-1px, -1px) rotate(1deg); }
-        90% { transform: translate(1px, 2px) rotate(0deg); }
-        100% { transform: translate(1px, -2px) rotate(-1deg); }
-      }
-
-
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
 
 
 
@@ -272,6 +325,23 @@ span:hover {
     color: azure;
 }
 
+/* Logo */
+.logo {
+    
+    border: 1px whitesmoke;
+    position: relative;
+    bottom: 50px;
+    left: 90px;
+  }
+
+/* ANIMACION HEADER */
+.containerHeader {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 14%;
+    left: 50%;
+  }
+
 /* Articles de galeria */
 article {
     background-color: #fff;
@@ -282,17 +352,16 @@ article {
     padding: 10px;
 }
 
+/* LOGO */
 .logo {
-    height: 40px;
-    border: 1px rgb(148, 44, 44);
-    position: absolute;
+    
+    border: 1px whitesmoke;
+    position: relative;
+    top: 40px;
     left: 400px;
-}
-
-.logo:hover {
-    animation: shake 0.5s;
-    animation-iteration-count: infinite;
   }
+
+
 
 /* Flex */
     .flexMenu {
@@ -359,145 +428,13 @@ article {
     }
 
 
-/* KEYFRAMES LOGO */
-@keyframes shake {
-        0% { transform: translate(1px, 1px) rotate(0deg); }
-        10% { transform: translate(-1px, -2px) rotate(-1deg); }
-        20% { transform: translate(-3px, 0px) rotate(1deg); }
-        30% { transform: translate(3px, 2px) rotate(0deg); }
-        40% { transform: translate(1px, -1px) rotate(1deg); }
-        50% { transform: translate(-1px, 2px) rotate(-1deg); }
-        60% { transform: translate(-3px, 1px) rotate(0deg); }
-        70% { transform: translate(3px, 1px) rotate(-1deg); }
-        80% { transform: translate(-1px, -1px) rotate(1deg); }
-        90% { transform: translate(1px, 2px) rotate(0deg); }
-        100% { transform: translate(1px, -2px) rotate(-1deg); }
-      }
-
-
-/* KEYFRAMES HEADER */
-@keyframes glitch {
-    1%{
-      transform: rotateX(10deg) skewX(90deg);
-    }
-    2%{
-      transform: rotateX(0deg) skewX(0deg);
-    }
-  }
-
- 
-  @keyframes noise-1 {
-        steps: 30;
-    @for $i from 1 through $steps {
-      #{percentage($i*(1/$steps))} {
-        $top: random(100);
-        $bottom: random(101 - $top);
-        clip-path: inset(#{$top}px 0 #{$bottom}px 0);
-      }
-    }
+/* ANIMACION LOGO */
+.logo {
+   
+    animation: shake 0.5s;
   
-  
-  @keyframes noise-2 {
-    $steps: 30;
-    @for $i from 0 through $steps {
-      #{percentage($i*(1/$steps))} {
-        $top: random(100);
-        $bottom: random(101 - $top);
-        clip-path: inset(#{$top}px 0 #{$bottom}px 0);
-      }
-    }
-  }
-  
-  .scanlines {
-    overflow: hidden;
-    mix-blend-mode: difference;
-  }
-  
-  .scanlines::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    animation: fudge 7s ease-in-out alternate infinite;
-  }
-  
-  
-  @keyframes fudge {
-    from {
-      transform: translate(0px, 0px);
-    }
-    to {
-      transform: translate(0px, 2%);
-    }
-  }
-  
-  .glow {
-    @extend .glitch;
-    text-shadow: 0 0 1000px rgb(223, 191, 191);
-    color: transparent;
-    position: absolute;
-    top: 0;
-  }
-  
-  
-  
-  @keyframes glitch-2 {
-    1%{
-      transform: rotateX(10deg) skewX(70deg);
-    }
-    2%{
-      transform: rotateX(0deg) skewX(0deg);
-    }
-  }
-
-} 
-
-
-/* Header */
-header {
-    font-family: "Oswald", sans-serif;
-    font-style: italic;
-    color: white;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-/* ANIMACION DE HEADER */
-.container2 {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 4%;
-    left: 50%;
-  }
-  
-  .glitch {
-    color: rgb(223, 191, 191);
-    position: relative;
-    font-size: 2vw;
-    margin: 70px 200px;
-    animation: glitch 5s 5s infinite;
-  }
-  
-  .glitch::before {
-    content: attr(data-text);
-    position: absolute;
-    left: -2px;
-    text-shadow: -5px 0 magenta;
-    overflow: hidden;
-    top: 0;
-    animation: noise-1 3s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
-  }
-  
-  .glitch::after {
-    content: attr(data-text);
-    position: absolute;
-    left: 2px;
-    text-shadow: -5px 0 lightgreen;
-    overflow: hidden;
-    top: 0;
-    animation: noise-2 3s linear infinite alternate-reverse, glitch 5s 5s infinite;
+    
+    animation-iteration-count: infinite;
   }
 
 /* GRIDS POR AREAS */
@@ -554,7 +491,104 @@ header {
     }
 }
 
+/* KEYFRAMES HEADER */
+@keyframes glitch {
+    1%{
+      transform: rotateX(10deg) skewX(90deg);
+    }
+    2%{
+      transform: rotateX(0deg) skewX(0deg);
+    }
+  }
+  
+  @keyframes noise-1 {
+    $steps: 30;
+    @for $i from 1 through $steps {
+      #{percentage($i*(1/$steps))} {
+        $top: random(100);
+        $bottom: random(101 - $top);
+        clip-path: inset(#{$top}px 0 #{$bottom}px 0);
+      }
+    }
+  }
+  
+  @keyframes noise-2 {
+    $steps: 30;
+    @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+        $top: random(100);
+        $bottom: random(101 - $top);
+        clip-path: inset(#{$top}px 0 #{$bottom}px 0);
+      }
+    }
+  }
+  
+  .scanlines {
+    overflow: hidden;
+    mix-blend-mode: difference;
+  }
+  
+  .scanlines::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(255, 255, 255, 0.05) .5%,
+      transparent 1%
+    );
+  
+    animation: fudge 7s ease-in-out alternate infinite;
+  }
+  
+  
+  @keyframes fudge {
+    from {
+      transform: translate(0px, 0px);
+    }
+    to {
+      transform: translate(0px, 2%);
+    }
+  }
+  
+  .glow {
+    @extend .glitch;
+    text-shadow: 0 0 1000px rgb(245, 239, 239);
+    color: transparent;
+    position: absolute;
+    top: 0;
+  }
+  
 
+  
+  @keyframes glitch-2 {
+    1%{
+      transform: rotateX(10deg) skewX(70deg);
+    }
+    2%{
+      transform: rotateX(0deg) skewX(0deg);
+    }
+  }
+
+  /* KEYFRAMES LOGO */
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
 
 
 
